@@ -1,0 +1,93 @@
+body {
+  width: 99%;
+  background-color: #15e715;
+  font-family: sans-serif;
+  position: absolute;
+  top: 5%;
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  font-size: 4.5em;
+  color: rgb(255, 255, 255);
+}
+.container {
+  text-align: center;
+  align-items: center;
+}
+.error {
+  font-size: 1.5em;
+}
+.short-url {
+  margin: 30px;
+}
+
+.short-url a {
+  text-decoration: none;
+  font-size: 1.8em;
+  color: #484848;
+}
+img {
+  width: 30%;
+  transition: all 0.3s;
+}
+input[type="url"] {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border-radius: 0.8rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 40vw;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+}
+
+input[type="submit"] {
+  display: block;
+  margin: 15px auto;
+  font-size: 2em;
+  background-color: #3f51b5;
+  color: white;
+  border: 0px;
+  border-radius: 5px;
+  padding: 2% 6%;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(61, 61, 61);
+  color: white;
+  text-align: center;
+}
+.footer-text {
+  text-decoration: none;
+  font-size: 1.5em;
+  color: white;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+}
+.innerFooter {
+  display: flex;
+  text-decoration: none;
+  list-style-type: none;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    top: 0%;
+  }
+  input[type="url"] {
+    width: 60vw;
+  }
+  .short-url a {
+    font-size: 1.4em;
+  }
+}

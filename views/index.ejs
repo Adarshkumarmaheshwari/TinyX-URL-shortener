@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" href="icon.jpg" type="image/jpg" sizes="16x16" />
+    <title>TinyX - URL shortner</title>
+  </head>
+  <body>
+    <div class="container">
+      <% if (locals.error) { %>
+      <img src="sad.jpg" alt="sad" />
+      <% } else{ %>
+      <img src="happy.jpg" alt="sad" />
+      <% } %>
+      <h1>TinyX - URL shortner</h1>
+      <% if (locals.error) { %>
+      <p class="error"><%= error %></p>
+      <style>
+        body {
+          transition: all 0.3s;
+          background: #e93e00;
+        }
+      </style>
+      <% } %>
+      <form action="/" method="post">
+        <input
+          type="url"
+          name="url"
+          id="url"
+          placeholder=" Enter your URL here"
+        />
+        <input type="submit" value="Create URL" />
+      </form>
+      <div class="short-url">
+        <% if (locals.short_url) { %>
+        <a href="<%= short_url %>"><%= short_url %> </a>
+        <% } %>
+      </div>
+    </div>
+    <footer class="footer">
+      <ul class="innerFooter">
+        <li>
+          <a
+            href="https://github.com/Adarshkumarmaheshwari/TinyX-URL-shortner"
+            class="footer-text"
+          >
+            GitHub |</a
+          >
+        </li>
+        &nbsp;
+        <li>
+          <a
+            href="https://www.linkedin.com/in/adarshkumarmaheshwari/"
+            class="footer-text"
+          >
+            Linkedin
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
