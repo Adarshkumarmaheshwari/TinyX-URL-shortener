@@ -4,10 +4,11 @@ const createHttpError = require('http-errors')
 const mongoose = require('mongoose')
 const path = require('path')
 const dotenv = require('dotenv')
+const clipboardy = require('clipboardy')
 const { log } = require('console')
 const ShortUrl=require('./models/url.model')
 const connectDB = require('./config/db.env')
-
+const { render } = require('ejs')
 
 const app = express()
 app.use(express.static(path.join(__dirname, 'public')))
@@ -34,16 +35,17 @@ try{
     }
     const urlExists = await ShortUrl.findOne({url})
     if(urlExists){
-        res.render('index', {short_url: `${req.hostname}/${urlExists.shortId}`})
+        res.render('index', {short_url: `/${urlExists.shortId}`})
         return
     }
     const shortUrl = new ShortUrl({url: url, shortId: shortId.generate()})
     const result =await shortUrl.save()
-    res.render('index', {short_url: `${req.hostname}${result.shortId}`})
+    res.render('index', {short_url: `/${result.shortId}`})
 }catch(error){
     next(error)
 }
 })
+
 
 
 app.get('/:shortId', async (req, res, next) => {
