@@ -1,5 +1,5 @@
 # TinyX-URL-Shortner
-TinyX is a URL shortner which is based on node.js and express.js.\
+TinyX is a URL shortner which is based on node.js and express.js.
 
 Below are few screenshots to give you a idea of website.
 ### If there are no errors
